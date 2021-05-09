@@ -1,30 +1,39 @@
 {
-  "name": "simple-blog",
-  "version": "1.0.0",
-  "private": true,
-  "description": "simple-blog",
-  "author": "ivanvb",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "dependencies": {
-    "gatsby": "^3.4.1",
-    "gatsby-plugin-image": "^1.4.1",
-    "gatsby-plugin-react-helmet": "^4.4.0",
-    "gatsby-plugin-sharp": "^3.4.2",
-    "gatsby-plugin-sitemap": "^4.0.0",
-    "gatsby-source-contentful": "^5.4.0",
-    "gatsby-source-filesystem": "^3.4.0",
-    "gatsby-transformer-sharp": "^3.4.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
-  }
+    "name": "simple-blog",
+    "version": "1.0.0",
+    "private": true,
+    "description": "simple-blog",
+    "author": "ivanvb",
+    "keywords": [
+        "gatsby"
+    ],
+    "scripts": {
+        "dev:gatsby": "gatsby develop -H 0.0.0.0",
+        "build": "yarn build:css && gatsby build",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "build:css": "postcss ./src/styles/tailwind/base.css -o ./src/styles/tailwind/build.css",
+        "watch:css": "postcss ./src/styles/tailwind/base.css -o ./src/styles/tailwind/build.css -w",
+        "dev": "yarn build:css && concurrently \"yarn dev:gatsby\" \"yarn watch:css\""
+    },
+    "dependencies": {
+        "autoprefixer": "^10.2.5",
+        "gatsby": "^3.4.1",
+        "gatsby-plugin-image": "^1.4.1",
+        "gatsby-plugin-react-helmet": "^4.4.0",
+        "gatsby-plugin-sharp": "^3.4.2",
+        "gatsby-plugin-sitemap": "^4.0.0",
+        "gatsby-source-contentful": "^5.4.0",
+        "gatsby-source-filesystem": "^3.4.0",
+        "gatsby-transformer-sharp": "^3.4.0",
+        "postcss": "^8.2.14",
+        "postcss-cli": "^8.3.1",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-helmet": "^6.1.0",
+        "tailwindcss": "^2.1.2"
+    },
+    "devDependencies": {
+        "concurrently": "^6.1.0"
+    }
 }

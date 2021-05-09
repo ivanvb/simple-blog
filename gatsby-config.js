@@ -1,27 +1,27 @@
 module.exports = {
-  siteMetadata: {
-    title: "simple-blog",
-  },
-  plugins: [
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        accessToken: ".",
-        spaceId: "",
-      },
+    siteMetadata: {
+        title: 'simple-blog',
     },
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-  ],
+    plugins: [
+        {
+            resolve: 'gatsby-source-contentful',
+            options: {
+                accessToken: process.env.ACCESS_TOKEN,
+                spaceId: process.env.SPACE_ID,
+            },
+        },
+        'gatsby-plugin-image',
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-sitemap',
+        'gatsby-plugin-sharp',
+        'gatsby-transformer-sharp',
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'images',
+                path: './src/images/',
+            },
+            __key: 'images',
+        },
+    ],
 };
