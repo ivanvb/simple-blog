@@ -24,6 +24,9 @@ async function createPostPages(graphql, actions) {
         itemsPerPage: 3,
         pathPrefix: '/blog',
         component: template,
+        context: {
+            regex: '/.*/',
+        },
     });
 
     let tags = new Set();
@@ -31,6 +34,7 @@ async function createPostPages(graphql, actions) {
         node.tags.forEach((tag) => tags.add(tag.title));
     });
     tags = Array.from(tags);
+
     tags.forEach((tag) => {
         paginate({
             createPage: actions.createPage,
@@ -44,6 +48,9 @@ async function createPostPages(graphql, actions) {
             itemsPerPage: 3,
             pathPrefix: `/blog/${tag.toLowerCase()}`,
             component: template,
+            context: {
+                regex: `/${tag}/`,
+            },
         });
     });
 }
