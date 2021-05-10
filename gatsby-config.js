@@ -24,4 +24,11 @@ module.exports = {
             __key: 'images',
         },
     ],
+    flags: {
+        FAST_DEV: true,
+        DEV_SSR: true,
+        PARALLEL_SOURCING: true,
+        PRESERVE_FILE_DOWNLOAD_CACHE: true,
+        PRESERVE_WEBPACK_CACHE: true,
+    },
 };
