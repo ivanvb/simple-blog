@@ -7,7 +7,7 @@ const ArticleList = ({ data, pageContext }) => {
     const posts = data.allContentfulBlogpost.edges;
 
     return (
-        <div>
+        <div className="container">
             <PostPreviewList posts={posts.map(({ node }) => node)} />
         </div>
     );
@@ -24,8 +24,15 @@ export const query = graphql`
             edges {
                 node {
                     title
+                    publicationDate
+                    brief {
+                        brief
+                    }
                     tags {
                         title
+                    }
+                    headlineImage {
+                        gatsbyImageData(width: 350)
                     }
                 }
             }

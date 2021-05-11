@@ -7,7 +7,13 @@ const PostPreviewList = ({ posts }) => {
             {posts.map((post, i) => {
                 return (
                     <li key={i}>
-                        <PostPreview title={post.title} />
+                        <PostPreview
+                            title={post.title}
+                            publishDate={post.publicationDate}
+                            brief={post.brief.brief}
+                            tags={post.tags.map(({ title }) => title)}
+                            image={post.headlineImage.gatsbyImageData}
+                        />
                     </li>
                 );
             })}
