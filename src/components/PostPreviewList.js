@@ -3,10 +3,10 @@ import PostPreview from './PostPreview';
 
 const PostPreviewList = ({ posts }) => {
     return (
-        <ul>
+        <ul className="w-2/3 divide-y">
             {posts.map((post, i) => {
                 return (
-                    <li key={i}>
+                    <li key={i} className="py-12 font-serif">
                         <PostPreview
                             title={post.title}
                             publishDate={post.publicationDate}

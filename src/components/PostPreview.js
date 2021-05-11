@@ -3,14 +3,10 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const PostPreview = ({ title, brief, publishDate, tags, image }) => {
     return (
-        <div className="flex h-64">
-            <div className="w-1/3">
-                <GatsbyImage image={image} />
-            </div>
-            <div className="w-2/3">
-                <h2>{title}</h2>
-                <p>{brief}</p>
-            </div>
+        <div className="cursor-pointer">
+            <span className="opacity-50 block text-sm">{publishDate}</span>
+            <h2 className="font-bold text-2xl tracking-wide my-2">{title}</h2>
+            <p className="leading-8 tracking-wide">{brief}</p>
         </div>
     );
 };

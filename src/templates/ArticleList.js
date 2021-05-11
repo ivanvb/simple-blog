@@ -24,7 +24,7 @@ export const query = graphql`
             edges {
                 node {
                     title
-                    publicationDate
+                    publicationDate(formatString: "ddd, MMM DD, YYYY")
                     brief {
                         brief
                     }
