@@ -2,6 +2,9 @@ const path = require('path');
 const { paginate } = require('gatsby-awesome-pagination');
 
 async function createPostPages(graphql, actions) {
+    const ITEMS_PER_PAGE = 6;
+    const POST_PAGE_PREFIX = 'blog';
+
     const template = path.resolve('./src/templates/ArticleList.js');
     const blogPosts = await graphql(`
         {
@@ -24,15 +27,15 @@ async function createPostPages(graphql, actions) {
     });
     tags = Array.from(tags);
     const tagsContextData = [
-        { name: 'All', url: `/blog` },
-        ...tags.map((tag) => ({ name: tag, url: `/blog/${tag.toLowerCase()}` })),
+        { name: 'All', url: `/${POST_PAGE_PREFIX}` },
+        ...tags.map((tag) => ({ name: tag, url: `/${POST_PAGE_PREFIX}/${tag.toLowerCase()}` })),
     ];
 
     paginate({
         createPage: actions.createPage,
         items: blogPosts.data.allContentfulBlogpost.edges,
-        itemsPerPage: 3,
-        pathPrefix: '/blog',
+        itemsPerPage: 4,
+        pathPrefix: `/${POST_PAGE_PREFIX}`,
         component: template,
         context: {
             regex: '/.*/',
@@ -50,8 +53,8 @@ async function createPostPages(graphql, actions) {
 
                 return false;
             }),
-            itemsPerPage: 3,
-            pathPrefix: `/blog/${tag.toLowerCase()}`,
+            itemsPerPage: ITEMS_PER_PAGE,
+            pathPrefix: `/${POST_PAGE_PREFIX}/${tag.toLowerCase()}`,
             component: template,
             context: {
                 regex: `/${tag}/`,

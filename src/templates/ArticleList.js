@@ -1,13 +1,15 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import PostPreviewList from '../components/PostPreviewList';
+import TagsList from '../components/TagsList';
 
 const ArticleList = ({ data, pageContext }) => {
     const { humanPageNumber, numberOfPages, previousPagePath, nextPagePath, tags } = pageContext;
     const posts = data.allContentfulBlogpost.edges;
 
     return (
-        <div className="container">
+        <div className="container flex py-12 relative justify-between">
+            <TagsList tags={tags} />
             <PostPreviewList posts={posts.map(({ node }) => node)} />
         </div>
     );
