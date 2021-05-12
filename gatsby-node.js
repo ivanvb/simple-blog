@@ -18,6 +18,16 @@ async function createPostPages(graphql, actions) {
         }
     `);
 
+    let tags = new Set();
+    blogPosts.data.allContentfulBlogpost.edges.forEach(({ node }) => {
+        node.tags.forEach((tag) => tags.add(tag.title));
+    });
+    tags = Array.from(tags);
+    const tagsContextData = [
+        { name: 'All', url: `/blog` },
+        ...tags.map((tag) => ({ name: tag, url: `/blog/${tag.toLowerCase()}` })),
+    ];
+
     paginate({
         createPage: actions.createPage,
         items: blogPosts.data.allContentfulBlogpost.edges,
@@ -26,14 +36,9 @@ async function createPostPages(graphql, actions) {
         component: template,
         context: {
             regex: '/.*/',
+            tags: tagsContextData,
         },
     });
-
-    let tags = new Set();
-    blogPosts.data.allContentfulBlogpost.edges.forEach(({ node }) => {
-        node.tags.forEach((tag) => tags.add(tag.title));
-    });
-    tags = Array.from(tags);
 
     tags.forEach((tag) => {
         paginate({
@@ -50,6 +55,7 @@ async function createPostPages(graphql, actions) {
             component: template,
             context: {
                 regex: `/${tag}/`,
+                tags: tagsContextData,
             },
         });
     });

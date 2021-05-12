@@ -3,7 +3,7 @@ import React from 'react';
 import PostPreviewList from '../components/PostPreviewList';
 
 const ArticleList = ({ data, pageContext }) => {
-    const { humanPageNumber, numberOfPages, previousPagePath, nextPagePath } = pageContext;
+    const { humanPageNumber, numberOfPages, previousPagePath, nextPagePath, tags } = pageContext;
     const posts = data.allContentfulBlogpost.edges;
 
     return (
