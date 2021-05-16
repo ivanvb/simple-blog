@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 const PostPreviewList = ({ posts }) => {
     return (
-        <ul className="w-2/3 divide-y">
+        <ul className="w-full md:w-2/3 divide-y">
             {posts.map((post, i) => {
                 return (
                     <li

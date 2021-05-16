@@ -8,9 +8,11 @@ const ArticleList = ({ data, pageContext }) => {
     const posts = data.allContentfulBlogpost.edges;
 
     return (
-        <div className="container flex py-12 relative justify-between">
-            <TagsList tags={tags} />
-            <PostPreviewList posts={posts.map(({ node }) => node)} />
+        <div className="container">
+            <div className="block md:flex py-12 md:relative justify-between">
+                <TagsList tags={tags} />
+                <PostPreviewList posts={posts.map(({ node }) => node)} />
+            </div>
         </div>
     );
 };
