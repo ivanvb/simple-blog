@@ -1,5 +1,6 @@
 const path = require('path');
 const { paginate } = require('gatsby-awesome-pagination');
+const { titleToSlug } = require('./src/util/index');
 
 async function createPostPages(graphql, actions) {
     const ITEMS_PER_PAGE = 2;
@@ -75,6 +76,34 @@ async function createPostPages(graphql, actions) {
     });
 }
 
+async function createIndividualPostPages(graphql, actions) {
+    const template = path.resolve('./src/templates/BlogPost.js');
+    const blogPosts = await graphql(`
+        {
+            allContentfulBlogpost {
+                edges {
+                    node {
+                        title
+                        tags {
+                            title
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
+    blogPosts.data.allContentfulBlogpost.edges.forEach(({ node }) => {
+        actions.createPage({
+            path: titleToSlug(node.title),
+            component: template,
+        });
+    });
+}
+
 exports.createPages = async ({ graphql, actions }) => {
-    return Promise.all([createPostPages(graphql, actions)]);
+    return Promise.all([
+        createPostPages(graphql, actions),
+        createIndividualPostPages(graphql, actions),
+    ]);
 };

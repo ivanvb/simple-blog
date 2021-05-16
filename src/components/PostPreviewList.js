@@ -1,6 +1,7 @@
 import React from 'react';
 import PostPreview from './PostPreview';
 import classnames from 'classnames';
+import { titleToSlug } from '../util/index';
 
 const PostPreviewList = ({ posts }) => {
     return (
@@ -20,6 +21,7 @@ const PostPreviewList = ({ posts }) => {
                             brief={post.brief.brief}
                             tags={post.tags.map(({ title }) => title)}
                             image={post.headlineImage.gatsbyImageData}
+                            link={titleToSlug(post.title)}
                         />
                     </li>
                 );
