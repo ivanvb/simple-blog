@@ -58,7 +58,7 @@ async function createPostPages(graphql, actions) {
         paginate({
             createPage: actions.createPage,
             items: blogPosts.data.allContentfulBlogpost.edges.filter(({ node }) => {
-                for (const t in node.tags) {
+                for (const t of node.tags) {
                     if (t.title === tag) return true;
                 }
 
