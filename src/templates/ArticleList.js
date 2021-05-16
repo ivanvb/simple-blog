@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import PostPreviewList from '../components/PostPreviewList';
 import TagsList from '../components/TagsList';
+import Pagination from '../components/Pagination';
 
 const ArticleList = ({ data, pageContext }) => {
     const { humanPageNumber, numberOfPages, previousPagePath, nextPagePath, tags } = pageContext;
@@ -13,6 +14,12 @@ const ArticleList = ({ data, pageContext }) => {
                 <TagsList tags={tags} />
                 <PostPreviewList posts={posts.map(({ node }) => node)} />
             </div>
+            <Pagination
+                numberOfPages={numberOfPages}
+                previousPage={previousPagePath}
+                nextPage={nextPagePath}
+                currentPage={humanPageNumber}
+            />
         </div>
     );
 };
