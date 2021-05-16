@@ -13,6 +13,7 @@ const TagsList = ({ tags }) => {
                                 to={tag.url}
                                 className="px-6 block md:min-w-40 py-1 my-2 opacity-60 bg-gray-200 md:bg-transparent rounded-full md:rounded-none mr-3 md:mr-0"
                                 activeClassName="bg-gray-400 md:bg-gray-200 md:rounded opacity-100"
+                                partiallyActive
                             >
                                 {tag.name}{' '}
                                 <span className="tracking-wide inline-block ml-1">{`(${tag.total.toLocaleString()})`}</span>
