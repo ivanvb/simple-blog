@@ -2,7 +2,7 @@ const path = require('path');
 const { paginate } = require('gatsby-awesome-pagination');
 
 async function createPostPages(graphql, actions) {
-    const ITEMS_PER_PAGE = 6;
+    const ITEMS_PER_PAGE = 2;
     const POST_PAGE_PREFIX = 'blog';
 
     const template = path.resolve('./src/templates/ArticleList.js');
@@ -42,11 +42,10 @@ async function createPostPages(graphql, actions) {
         })),
     ];
 
-    console.log(tagsContextData);
     paginate({
         createPage: actions.createPage,
         items: blogPosts.data.allContentfulBlogpost.edges,
-        itemsPerPage: 4,
+        itemsPerPage: ITEMS_PER_PAGE,
         pathPrefix: `/${POST_PAGE_PREFIX}`,
         component: template,
         context: {
