@@ -30,7 +30,7 @@ async function createPostPages(graphql, actions) {
     const tagsContextData = [
         {
             name: 'All',
-            url: `/${POST_PAGE_PREFIX}`,
+            url: `/${POST_PAGE_PREFIX}/all`,
             total: blogPosts.data.allContentfulBlogpost.edges.length,
         },
         ...tags.map((tag) => ({
@@ -46,7 +46,7 @@ async function createPostPages(graphql, actions) {
         createPage: actions.createPage,
         items: blogPosts.data.allContentfulBlogpost.edges,
         itemsPerPage: ITEMS_PER_PAGE,
-        pathPrefix: `/${POST_PAGE_PREFIX}`,
+        pathPrefix: `/${POST_PAGE_PREFIX}/all`,
         component: template,
         context: {
             regex: '/.*/',
