@@ -96,6 +96,9 @@ module.exports = {
                 70: '.7',
                 80: '.8',
             },
+            minWidth: {
+                40: '10rem',
+            },
         },
         container: {
             center: true,

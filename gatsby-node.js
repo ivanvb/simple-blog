@@ -26,11 +26,23 @@ async function createPostPages(graphql, actions) {
         node.tags.forEach((tag) => tags.add(tag.title));
     });
     tags = Array.from(tags);
+
     const tagsContextData = [
-        { name: 'All', url: `/${POST_PAGE_PREFIX}` },
-        ...tags.map((tag) => ({ name: tag, url: `/${POST_PAGE_PREFIX}/${tag.toLowerCase()}` })),
+        {
+            name: 'All',
+            url: `/${POST_PAGE_PREFIX}`,
+            total: blogPosts.data.allContentfulBlogpost.edges.length,
+        },
+        ...tags.map((tag) => ({
+            name: tag,
+            url: `/${POST_PAGE_PREFIX}/${tag.toLowerCase()}`,
+            total: blogPosts.data.allContentfulBlogpost.edges.filter(({ node }) => {
+                return node.tags.map(({ title }) => title).includes(tag);
+            }).length,
+        })),
     ];
 
+    console.log(tagsContextData);
     paginate({
         createPage: actions.createPage,
         items: blogPosts.data.allContentfulBlogpost.edges,
