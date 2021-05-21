@@ -30,7 +30,7 @@ export const query = graphql`
             title
             publicationDate
             headlineImage {
-                gatsbyImageData(width: 1600)
+                gatsbyImageData(width: 1600, quality: 100)
             }
             tags {
                 title

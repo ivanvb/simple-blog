@@ -17,7 +17,25 @@ module.exports = {
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
-        'gatsby-plugin-sharp',
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                defaults: {
+                    formats: [`auto`, `webp`],
+                    placeholder: `blurred`,
+                    quality: 50,
+                    breakpoints: [378, 768, 1080, 1366, 1920],
+                    backgroundColor: `transparent`,
+                    tracedSVGOptions: {},
+                    blurredOptions: {},
+                    jpgOptions: {},
+                    pngOptions: {},
+                    webpOptions: {},
+                    avifOptions: {},
+                },
+            },
+        },
+        ,
         'gatsby-transformer-sharp',
         {
             resolve: 'gatsby-source-filesystem',
