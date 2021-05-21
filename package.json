@@ -17,6 +17,7 @@
         "dev": "yarn build:css && concurrently \"yarn dev:gatsby\" \"yarn watch:css\""
     },
     "dependencies": {
+        "@contentful/rich-text-types": "^14.1.2",
         "autoprefixer": "^10.2.5",
         "classnames": "^2.3.1",
         "gatsby": "^3.4.1",

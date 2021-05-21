@@ -96,6 +96,9 @@ async function createIndividualPostPages(graphql, actions) {
     blogPosts.data.allContentfulBlogpost.edges.forEach(({ node }) => {
         actions.createPage({
             path: titleToSlug(node.title),
+            context: {
+                title: node.title,
+            },
             component: template,
         });
     });
