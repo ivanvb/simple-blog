@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 /* Taken from https://stackoverflow.com/a/45524215 */
 html {
@@ -15,3 +14,5 @@ body {
 .container {
     max-width: 1024px !important;
 }
+
+@tailwind utilities;
