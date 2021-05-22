@@ -2,6 +2,7 @@ process.env.NODE_ENV !== 'production' &&
     require('dotenv').config({
         path: `.env.development`,
     });
+
 module.exports = {
     siteMetadata: {
         title: 'simple-blog',
@@ -16,7 +17,7 @@ module.exports = {
         },
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
-        'gatsby-plugin-sitemap',
+        // 'gatsby-plugin-sitemap',
         {
             resolve: `gatsby-plugin-sharp`,
             options: {
