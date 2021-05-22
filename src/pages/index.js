@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Quote from '../components/Quote';
-import '../styles/tailwind/build.css';
 
 const IndexPage = ({ data }) => {
     const { contentfulHeroQuote: quoteData } = data;
