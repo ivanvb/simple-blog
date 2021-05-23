@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Quote from '../components/Quote';
+import RecentPosts from '../components/RecentPosts';
 
 const IndexPage = ({ data }) => {
     const { contentfulHeroQuote: quoteData } = data;
@@ -11,6 +12,7 @@ const IndexPage = ({ data }) => {
                 author={quoteData.author}
                 backgroundImage={quoteData.backgroundImage.gatsbyImageData}
             />
+            <RecentPosts />
         </div>
     );
 };

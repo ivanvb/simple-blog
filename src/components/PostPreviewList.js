@@ -3,16 +3,21 @@ import PostPreview from './PostPreview';
 import classnames from 'classnames';
 import { titleToSlug } from '../util/index';
 
-const PostPreviewList = ({ posts }) => {
+const PostPreviewList = ({ posts, grid }) => {
     return (
-        <ul className="w-full md:w-2/3 divide-y">
+        <ul
+            className={classnames(
+                grid ? 'grid grid-cols-1 md:grid-cols-2 gap-10' : 'w-full md:w-2/3 divide-y'
+            )}
+        >
             {posts.map((post, i) => {
                 return (
                     <li
                         key={i}
                         className={classnames({
-                            'pt-12': i !== 0,
-                            'pb-12': i !== posts.length - 1,
+                            'pt-12': i !== 0 && !grid,
+                            'pb-12': i !== posts.length - 1 && !grid,
+                            'border-b pb-10': grid,
                         })}
                     >
                         <PostPreview
@@ -20,7 +25,6 @@ const PostPreviewList = ({ posts }) => {
                             publishDate={post.publicationDate}
                             brief={post.brief.brief}
                             tags={post.tags.map(({ title }) => title)}
-                            image={post.headlineImage.gatsbyImageData}
                             link={titleToSlug(post.title)}
                         />
                     </li>

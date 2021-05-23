@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-const PostPreview = ({ title, brief, publishDate, tags, image, link }) => {
+const PostPreview = ({ title, brief, publishDate, tags, link }) => {
     return (
         <Link to={link}>
             <span className="opacity-50 block text-sm">{publishDate}</span>
