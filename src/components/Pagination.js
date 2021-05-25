@@ -11,7 +11,7 @@ const PaginationLink = ({ to, enabled, children }) => {
 
 const Pagination = ({ numberOfPages, currentPage, nextPage, previousPage }) => {
     return (
-        <nav className="border-t">
+        <nav className="border-t mt-auto">
             <ul className="flex space-x-3 justify-center mt-6">
                 <li>
                     <PaginationLink enabled={currentPage !== 1} to={previousPage}>
