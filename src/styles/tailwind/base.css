@@ -2,10 +2,10 @@
 @tailwind components;
 
 /* Taken from https://stackoverflow.com/a/45524215 */
-html {
+/* html {
     margin-left: calc(100vw - 100%);
     margin-right: 0;
-}
+} */
 
 body {
     @apply font-serif;

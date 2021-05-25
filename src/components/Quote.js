@@ -6,7 +6,7 @@ const Quote = ({ backgroundImage, text, author }) => {
         <div className="relative h-64 md:h-104 w-full flex items-center justify-center">
             <div className="absolute h-full w-full">
                 <GatsbyImage
-                    className="h-full w-full xl:-ml-4"
+                    className="h-full w-full"
                     image={backgroundImage}
                     objectFit="cover"
                     imgClassName="filter brightness-50"

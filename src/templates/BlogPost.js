@@ -11,7 +11,7 @@ const BlogPost = ({ data }) => {
         <article className="flex flex-col items-center">
             <GatsbyImage
                 image={post.headlineImage.gatsbyImageData}
-                className="h-64 md:h-80 lg:h-96 mb-3 md:mb-6 max-w-400 xl:-ml-4"
+                className="h-64 md:h-80 lg:h-96 mb-3 md:mb-6 max-w-400"
             />
 
             <div className="container">
