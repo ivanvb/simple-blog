@@ -36,7 +36,7 @@ const MobileLinks = () => {
 
     return (
         <>
-            <button onClick={() => setOpen((prev) => !prev)}>
+            <button onClick={() => setOpen((prev) => !prev)} className="md:hidden">
                 {isOpen ? <CgClose size={28} /> : <HiOutlineMenu size={28} />}
             </button>
             {isOpen && (
