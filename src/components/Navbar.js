@@ -40,7 +40,7 @@ const MobileLinks = () => {
                 {isOpen ? <CgClose size={28} /> : <HiOutlineMenu size={28} />}
             </button>
             {isOpen && (
-                <ul className="md:hidden space-y-6 absolute top-full left-0 bg-white w-full pb-8 -mt-1 shadow-b">
+                <ul className="md:hidden space-y-6 absolute top-full left-0 bg-primary-bg w-full pb-8 -mt-1 shadow-b">
                     {links.map((link, i) => (
                         <li key={i} className="container">
                             <Link to={link.link}>{link.label}</Link>
@@ -53,7 +53,7 @@ const MobileLinks = () => {
 };
 const Navbar = () => {
     return (
-        <div className="container py-8 w-full container flex justify-between items-center sticky md:relative top-0 bg-white z-50">
+        <div className="container py-8 w-full container flex justify-between items-center sticky md:relative top-0 bg-primary-bg z-50">
             <Link to="/">
                 <Logo className="h-6" />
             </Link>

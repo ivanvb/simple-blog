@@ -7,6 +7,20 @@
     margin-right: 0;
 } */
 
+:root {
+    --light-background: white;
+    --light-text: black;
+    --light-accent: black;
+
+    --dark-background: black;
+    --dark-text: white;
+    --dark-accent: white;
+
+    --primary-background: var(--light-background);
+    --primary-text: var(--light-text);
+    --primary-accent: var(var(--light-background));
+}
+
 html,
 body,
 #___gatsby,
@@ -20,7 +34,7 @@ body,
 }
 
 body {
-    @apply font-serif;
+    @apply font-serif text-primary-text bg-primary-bg;
 }
 
 .container {

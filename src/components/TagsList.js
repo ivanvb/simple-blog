@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 const TagsList = ({ tags }) => {
     return (
-        <nav className="top-12 self-start w-full md:w-auto bg-white z-50 pt-4 pb-4 md:pt-0 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0">
+        <nav className="top-12 self-start w-full md:w-auto bg-primary-bg z-50 pt-4 pb-4 md:pt-0 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0">
             <h3 className="text-xl font-bold mb-3">Categories</h3>
             <ul className="flex md:block w-auto overflow-x-auto flex-wrap">
                 {tags.map((tag, i) => {
