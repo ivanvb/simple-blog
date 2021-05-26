@@ -3,6 +3,7 @@ import Logo from './icons/Logo';
 import { Link } from 'gatsby';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { CgClose } from 'react-icons/cg';
+import ThemeToggler from './ThemeToggler';
 
 const links = [
     {
@@ -59,6 +60,7 @@ const Navbar = () => {
             </Link>
             <nav>
                 <DesktopLinks />
+                <ThemeToggler />
                 <MobileLinks />
             </nav>
         </div>

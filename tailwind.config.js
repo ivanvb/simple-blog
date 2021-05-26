@@ -7,9 +7,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'primary-bg': 'var(--primary-background)',
-                'primary-text': 'var(--primary-text)',
-                'primary-accent': 'var(--primary-accent)',
+                'primary-bg': 'var(--primary_background)',
+                'primary-text': 'var(--primary_text)',
+                'primary-accent': 'var(--primary_accent)',
             },
             borderWidth: {
                 '1/2': '0.5px',

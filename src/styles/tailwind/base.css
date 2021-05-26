@@ -8,17 +8,17 @@
 } */
 
 :root {
-    --light-background: white;
-    --light-text: black;
-    --light-accent: black;
+    --light_background: white;
+    --light_text: black;
+    --light_accent: black;
 
-    --dark-background: black;
-    --dark-text: white;
-    --dark-accent: white;
+    --dark_background: black;
+    --dark_text: white;
+    --dark_accent: white;
 
-    --primary-background: var(--light-background);
-    --primary-text: var(--light-text);
-    --primary-accent: var(var(--light-background));
+    --primary_background: var(--light_background);
+    --primary_text: var(--light_text);
+    --primary_accent: var(--light_accent);
 }
 
 html,
