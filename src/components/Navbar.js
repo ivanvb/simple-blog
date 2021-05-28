@@ -58,7 +58,7 @@ const Navbar = () => {
             <Link to="/">
                 <Logo className="h-6" />
             </Link>
-            <nav>
+            <nav className="flex items-center space-x-4">
                 <DesktopLinks />
                 <ThemeToggler />
                 <MobileLinks />
