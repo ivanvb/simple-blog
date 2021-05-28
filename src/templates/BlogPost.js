@@ -16,7 +16,7 @@ const BlogPost = ({ data }) => {
             />
 
             <div className="container">
-                <div className="md:px-24">
+                <div className="blogpost-px">
                     <H1>{post.title}</H1>
                     {renderRichText(post.content, markdownOptions)}
                 </div>

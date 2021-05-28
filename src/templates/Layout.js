@@ -3,12 +3,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/tailwind/build.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ narrowFooter, children }) => {
     return (
         <>
             <Navbar />
             <main className="flex-1">{children}</main>
-            <Footer />
+            <Footer narrowFooter={narrowFooter} />
         </>
     );
 };

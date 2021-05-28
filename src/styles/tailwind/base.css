@@ -41,4 +41,8 @@ body {
     max-width: 1024px !important;
 }
 
+.blogpost-px {
+    @apply md:px-24;
+}
+
 @tailwind utilities;
