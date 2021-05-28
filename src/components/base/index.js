@@ -32,7 +32,7 @@ export const H6 = ({ children }) => (
     <h6 className="text-primary text-sm lg:text-base mb-1">{children}</h6>
 );
 
-export const Image = ({ image }) => <GatsbyImage image={image} className="w-full" />;
+export const Image = ({ image, alt }) => <GatsbyImage image={image} alt={alt} className="w-full" />;
 
 export const Separator = () => <hr />;
 
@@ -55,7 +55,12 @@ export const markdownOptions = {
             return <Text>{children}</Text>;
         },
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
-            return <Image image={node.data.target.gatsbyImageData} />;
+            return (
+                <Image
+                    image={node.data.target.gatsbyImageData}
+                    alt={node.data.target.description}
+                />
+            );
         },
         [BLOCKS.HEADING_1]: (node, children) => {
             return <H1>{children}</H1>;

@@ -12,6 +12,7 @@ const BlogPost = ({ data }) => {
             <GatsbyImage
                 image={post.headlineImage.gatsbyImageData}
                 className="h-64 md:h-80 lg:h-96 mb-3 md:mb-6 max-w-400"
+                alt={post.headlineImage.description}
             />
 
             <div className="container">
@@ -31,6 +32,7 @@ export const query = graphql`
             publicationDate
             headlineImage {
                 gatsbyImageData(width: 1600, quality: 100)
+                description
             }
             tags {
                 title
@@ -42,6 +44,7 @@ export const query = graphql`
                         __typename
                         contentful_id
                         gatsbyImageData(width: 1160)
+                        description
                     }
                 }
             }
