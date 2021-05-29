@@ -54,7 +54,7 @@ const MobileLinks = () => {
 };
 const Navbar = () => {
     return (
-        <div className="py-5 w-full sticky top-0 bg-primary-bg z-50 shadow-lg">
+        <div className="py-5 w-full sticky top-0 bg-primary-bg z-50 shadow-lg md:shadow">
             <div className="container flex justify-between items-center">
                 <Link to="/">
                     <Logo className="h-12" />
