@@ -24,9 +24,13 @@
     --primary_secondary_accent: var(--light_secondary_accent);
 }
 
-html,
-body {
+html {
+    min-height: 100vh;
     height: 100%;
+}
+
+body {
+    min-height: 100vh;
 }
 
 #___gatsby,
@@ -39,6 +43,23 @@ body {
 #gatsby-focus-wrapper {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+}
+
+body,
+#___gatsby {
+    display: flex;
+    flex-direction: column;
+}
+
+#___gatsby {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#___gatsby-focus-wrapper {
+    flex-grow: 1;
 }
 
 body {

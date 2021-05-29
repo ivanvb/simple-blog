@@ -10,7 +10,7 @@ const ArticleList = ({ data, pageContext }) => {
 
     return (
         <div className="container h-full flex flex-col flex-1">
-            <div className="block md:flex pt-0 pb-12 md:relative justify-between">
+            <div className="block md:flex md:pt-12 pb-12 md:relative justify-between">
                 <TagsList tags={tags} />
                 <PostPreviewList posts={posts.map(({ node }) => node)} />
             </div>
