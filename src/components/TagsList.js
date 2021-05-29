@@ -8,11 +8,11 @@ const TagsList = ({ tags }) => {
             <ul className="flex md:block w-auto overflow-x-auto flex-wrap">
                 {tags.map((tag, i) => {
                     return (
-                        <li key={i} className="text-secondary-accent">
+                        <li key={i} className="text-primary-text md:text-secondary-accent">
                             <Link
                                 to={tag.url}
-                                className="px-6 block md:min-w-40 py-1 my-2 bg-primary md:bg-transparent rounded-full md:rounded-none mr-3 md:mr-0"
-                                activeClassName="bg-gray-400 md:bg-primary-accent md:rounded text-primary-text"
+                                className="px-6 block md:min-w-40 py-1 my-2 bg-secondary-accent md:bg-transparent rounded-full md:rounded-none mr-3 md:mr-0"
+                                activeClassName="active-link md:rounded text-primary-text"
                                 partiallyActive
                             >
                                 {tag.name}{' '}

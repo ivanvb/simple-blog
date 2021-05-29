@@ -53,4 +53,8 @@ body {
     @apply md:px-24;
 }
 
+.active-link {
+    @apply bg-primary-accent !important;
+}
+
 @tailwind utilities;
