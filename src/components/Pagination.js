@@ -5,7 +5,7 @@ const PaginationLink = ({ to, enabled, children }) => {
     return enabled ? (
         <Link to={to}>{children}</Link>
     ) : (
-        <span className="opacity-30">{children}</span>
+        <span className="text-secondary-accent opacity-60">{children}</span>
     );
 };
 
