@@ -37,11 +37,11 @@ const MobileLinks = () => {
 
     return (
         <>
-            <button onClick={() => setOpen((prev) => !prev)} className="md:hidden">
+            <button onClick={() => setOpen((prev) => !prev)} className="md:hidden ml-4">
                 {isOpen ? <CgClose size={28} /> : <HiOutlineMenu size={28} />}
             </button>
             {isOpen && (
-                <ul className="md:hidden space-y-6 absolute top-full left-0 bg-primary-bg w-full pb-8 -mt-1 shadow-b">
+                <ul className="md:hidden space-y-6 absolute top-full left-0 bg-primary-bg w-full pb-8 -mt-1 shadow-b ml-0">
                     {links.map((link, i) => (
                         <li key={i} className="container">
                             <Link to={link.link}>{link.label}</Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
                 <Link to="/">
                     <Logo className="h-12" />
                 </Link>
-                <nav className="flex items-center space-x-4">
+                <nav className="flex items-center md:space-x-4">
                     <DesktopLinks />
                     <ThemeToggler />
                     <MobileLinks />
