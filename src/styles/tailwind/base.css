@@ -11,14 +11,17 @@
     --light_background: white;
     --light_text: black;
     --light_accent: #e5e7eb;
+    --light_secondary_accent: #757575;
 
     --dark_background: #232931;
     --dark_text: #eeeeee;
     --dark_accent: #50cca2;
+    --dark_secondary_accent: #a0a0a0;
 
     --primary_background: var(--light_background);
     --primary_text: var(--light_text);
     --primary_accent: var(--light_accent);
+    --primary_secondary_accent: var(--light_secondary_accent);
 }
 
 html,

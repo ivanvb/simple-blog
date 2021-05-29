@@ -10,6 +10,7 @@ module.exports = {
                 'primary-bg': 'var(--primary_background)',
                 'primary-text': 'var(--primary_text)',
                 'primary-accent': 'var(--primary_accent)',
+                'secondary-accent': 'var(--primary_secondary_accent)',
             },
             borderWidth: {
                 '1/2': '0.5px',

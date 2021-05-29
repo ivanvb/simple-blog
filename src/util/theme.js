@@ -26,6 +26,7 @@ function setInitialColor() {
     root.style.setProperty('--primary_background', colorMode === LIGHT ? 'white' : 'black');
     root.style.setProperty('--primary_text', colorMode === LIGHT ? 'black' : 'white');
     root.style.setProperty('--primary_accent', colorMode === LIGHT ? 'black' : 'white');
+    root.style.setProperty('--primary_secondary_accent', colorMode === LIGHT ? 'black' : 'white');
 }
 
 // Gets all the css variables defined in :root
