@@ -54,9 +54,9 @@ const MobileLinks = () => {
 };
 const Navbar = () => {
     return (
-        <div className="container py-8 w-full container flex justify-between items-center sticky md:relative top-0 bg-primary-bg z-50">
+        <div className="container py-5 w-full container flex justify-between items-center sticky md:relative top-0 bg-primary-bg z-50">
             <Link to="/">
-                <Logo className="h-6" />
+                <Logo className="h-12" />
             </Link>
             <nav className="flex items-center space-x-4">
                 <DesktopLinks />
