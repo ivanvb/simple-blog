@@ -24,6 +24,7 @@
     --primary_secondary_accent: var(--light_secondary_accent);
 }
 
+/* Sticky footer/navbar Gatsby specific styles */
 html {
     min-height: 100vh;
     height: 100%;
@@ -31,6 +32,8 @@ html {
 
 body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #___gatsby,
@@ -38,29 +41,12 @@ body {
     height: 100%;
     min-height: 100vh;
     min-height: -webkit-fill-available;
-}
-
-#gatsby-focus-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-body,
-#___gatsby {
-    display: flex;
-    flex-direction: column;
-}
-
-#___gatsby {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-#___gatsby-focus-wrapper {
-    flex-grow: 1;
-}
+/* End sticky footer/navbar */
 
 body {
     @apply font-serif text-primary-text bg-primary-bg;
