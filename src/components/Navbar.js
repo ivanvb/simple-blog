@@ -3,6 +3,7 @@ import Logo from './icons/Logo';
 import { Link } from 'gatsby';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { CgClose } from 'react-icons/cg';
+import { useClickAway } from 'react-use';
 import ThemeToggler from './ThemeToggler';
 
 const links = [
@@ -34,6 +35,8 @@ const DesktopLinks = () => {
 
 const MobileLinks = () => {
     const [isOpen, setOpen] = React.useState(false);
+    const ref = React.useRef();
+    useClickAway(ref, () => setOpen(false));
 
     return (
         <>
@@ -41,10 +44,15 @@ const MobileLinks = () => {
                 {isOpen ? <CgClose size={28} /> : <HiOutlineMenu size={28} />}
             </button>
             {isOpen && (
-                <ul className="md:hidden space-y-6 absolute top-full left-0 bg-primary-bg w-full pb-8 -mt-1 shadow-b ml-0">
+                <ul
+                    className="md:hidden space-y-6 absolute top-full left-0 bg-primary-bg w-full pb-8 -mt-1 shadow-b ml-0"
+                    ref={ref}
+                >
                     {links.map((link, i) => (
                         <li key={i} className="container">
-                            <Link to={link.link}>{link.label}</Link>
+                            <div className="inline-block" onClick={() => setOpen(false)}>
+                                <Link to={link.link}>{link.label}</Link>
+                            </div>
                         </li>
                     ))}
                 </ul>
