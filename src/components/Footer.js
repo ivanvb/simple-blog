@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 const Footer = ({ narrowFooter = false }) => {
     return (
-        <footer className="container pb-6 text-sm mt-auto">
+        <footer className="container pb-6 text-sm mt-auto pt-12">
             <span className={classnames({ 'blogpost-px': narrowFooter })}>
                 Copyright© 2021 - present
             </span>

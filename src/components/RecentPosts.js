@@ -25,7 +25,7 @@ const RecentPosts = () => {
         }
     `);
     return (
-        <section className="container py-12">
+        <section className="container pt-12">
             <H1>Recent Posts</H1>
             <PostPreviewList posts={recentPosts.map(({ node }) => node)} grid />
         </section>
