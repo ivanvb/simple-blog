@@ -1,6 +1,12 @@
 const React = require('react');
 const Layout = require('./src/templates/Layout').default;
-const { setInitialColor, getInitialColorMode, DARK, LIGHT } = require('./src/util/theme');
+const {
+    setInitialColor,
+    getInitialColorMode,
+    toggleMode,
+    DARK,
+    LIGHT,
+} = require('./src/util/theme');
 
 const MagicScriptTag = () => {
     // Replaces every instance of the LIGHT variable with its literal value
@@ -14,8 +20,14 @@ const MagicScriptTag = () => {
         .replace(/LIGHT/g, `'${LIGHT}'`)
         .replace(/DARK/g, `'${DARK}'`);
 
+    const toggleFnc = toggleMode
+        .toString()
+        .replace(/LIGHT/g, `'${LIGHT}'`)
+        .replace(/DARK/g, `'${DARK}'`);
+
     // Instead of hardcoding the function as a string we take advantage of the Function.toString method
     const codeToRunOnClient = `
+    ${toggleFnc}
     ${initialColorFunction}
     (${colorFunction})()
   `;
