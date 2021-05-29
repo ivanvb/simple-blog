@@ -11,8 +11,8 @@ const TagsList = ({ tags }) => {
                         <li key={i} className="text-primary-text md:text-secondary-accent">
                             <Link
                                 to={tag.url}
-                                className="px-6 block md:min-w-40 py-1 my-2 bg-secondary-accent md:bg-transparent rounded-full md:rounded-none mr-3 md:mr-0"
-                                activeClassName="active-link md:rounded text-primary-text"
+                                className="px-6 block md:min-w-40 py-1 my-2 bg-primary-accent dark:bg-secondary-accent md:bg-transparent rounded-full md:rounded-none mr-3 md:mr-0"
+                                activeClassName="active-link md:rounded text-primary-bg dark:text-primary-text"
                                 partiallyActive
                             >
                                 {tag.name}{' '}

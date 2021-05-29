@@ -54,7 +54,7 @@ body {
 }
 
 .active-link {
-    @apply bg-primary-accent !important;
+    @apply dark:bg-primary-accent bg-secondary-accent !important;
 }
 
 @tailwind utilities;
