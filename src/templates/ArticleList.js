@@ -9,7 +9,7 @@ const ArticleList = ({ data, pageContext }) => {
     const posts = data.allContentfulBlogpost.edges;
 
     return (
-        <div className="container h-full flex flex-col">
+        <div className="container h-full flex flex-col flex-1">
             <div className="block md:flex py-12 md:relative justify-between">
                 <TagsList tags={tags} />
                 <PostPreviewList posts={posts.map(({ node }) => node)} />

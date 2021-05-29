@@ -54,15 +54,17 @@ const MobileLinks = () => {
 };
 const Navbar = () => {
     return (
-        <div className="container py-5 w-full container flex justify-between items-center sticky md:relative top-0 bg-primary-bg z-50">
-            <Link to="/">
-                <Logo className="h-12" />
-            </Link>
-            <nav className="flex items-center space-x-4">
-                <DesktopLinks />
-                <ThemeToggler />
-                <MobileLinks />
-            </nav>
+        <div className="py-5 w-full sticky top-0 bg-primary-bg z-50 shadow-lg">
+            <div className="container flex justify-between items-center">
+                <Link to="/">
+                    <Logo className="h-12" />
+                </Link>
+                <nav className="flex items-center space-x-4">
+                    <DesktopLinks />
+                    <ThemeToggler />
+                    <MobileLinks />
+                </nav>
+            </div>
         </div>
     );
 };

@@ -7,7 +7,7 @@ const Layout = ({ narrowFooter, children }) => {
     return (
         <>
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 flex flex-col">{children}</main>
             <Footer narrowFooter={narrowFooter} />
         </>
     );

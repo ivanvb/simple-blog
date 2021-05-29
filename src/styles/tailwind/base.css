@@ -25,10 +25,14 @@
 }
 
 html,
-body,
+body {
+    height: 100%;
+}
+
 #___gatsby,
 #gatsby-focus-wrapper {
-    height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 #gatsby-focus-wrapper {
