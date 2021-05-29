@@ -11,8 +11,8 @@ const TagsList = ({ tags }) => {
                         <li key={i}>
                             <Link
                                 to={tag.url}
-                                className="px-6 block md:min-w-40 py-1 my-2 opacity-60 bg-gray-200 md:bg-transparent rounded-full md:rounded-none mr-3 md:mr-0"
-                                activeClassName="bg-gray-400 md:bg-gray-200 md:rounded opacity-100"
+                                className="px-6 block md:min-w-40 py-1 my-2 opacity-60 bg-primary md:bg-transparent rounded-full md:rounded-none mr-3 md:mr-0"
+                                activeClassName="bg-gray-400 md:bg-primary-accent md:rounded opacity-100"
                                 partiallyActive
                             >
                                 {tag.name}{' '}

@@ -10,11 +10,11 @@
 :root {
     --light_background: white;
     --light_text: black;
-    --light_accent: black;
+    --light_accent: #e5e7eb;
 
-    --dark_background: black;
-    --dark_text: white;
-    --dark_accent: white;
+    --dark_background: #232931;
+    --dark_text: #eeeeee;
+    --dark_accent: #50cca2;
 
     --primary_background: var(--light_background);
     --primary_text: var(--light_text);
