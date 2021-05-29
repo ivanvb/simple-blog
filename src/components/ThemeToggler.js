@@ -1,16 +1,11 @@
 import React from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import classnames from 'classnames';
-import { toggleMode, DARK, LIGHT, getInitialColorMode } from '../util/theme';
+import { DARK, LIGHT } from '../util/theme';
+import { ThemeContext } from '../context/ThemeContext';
 
 const ThemeToggler = () => {
-    const [theme, setTheme] = React.useState(getInitialColorMode());
-    const [loaded, setLoaded] = React.useState(false);
-
-    React.useEffect(() => setLoaded(true), []);
-    React.useEffect(() => {
-        toggleMode(theme);
-    }, [theme]);
+    const { theme, loaded, setTheme } = React.useContext(ThemeContext);
 
     return (
         <button
