@@ -33,24 +33,17 @@ const DesktopLinks = () => {
     );
 };
 
-const MobileLinks = () => {
-    const [isOpen, setOpen] = React.useState(false);
-    const ref = React.useRef();
-    useClickAway(ref, () => setOpen(false));
-
+const MobileLinks = ({ isMobileOpen, setMobileOpen }) => {
     return (
         <>
-            <button onClick={() => setOpen((prev) => !prev)} className="md:hidden ml-4">
-                {isOpen ? <CgClose size={28} /> : <HiOutlineMenu size={28} />}
+            <button onClick={() => setMobileOpen((prev) => !prev)} className="md:hidden ml-4">
+                {isMobileOpen ? <CgClose size={28} /> : <HiOutlineMenu size={28} />}
             </button>
-            {isOpen && (
-                <ul
-                    className="md:hidden space-y-6 absolute top-full left-0 bg-primary-bg w-full pb-8 -mt-1 shadow-b ml-0"
-                    ref={ref}
-                >
+            {isMobileOpen && (
+                <ul className="md:hidden space-y-6 absolute top-full left-0 bg-primary-bg w-full pb-8 -mt-1 shadow-b ml-0">
                     {links.map((link, i) => (
                         <li key={i} className="container">
-                            <div className="inline-block" onClick={() => setOpen(false)}>
+                            <div className="inline-block" onClick={() => setMobileOpen(false)}>
                                 <Link to={link.link}>{link.label}</Link>
                             </div>
                         </li>
@@ -61,16 +54,22 @@ const MobileLinks = () => {
     );
 };
 const Navbar = () => {
+    const [isMobileOpen, setMobileOpen] = React.useState(false);
+    const ref = React.useRef();
+    useClickAway(ref, () => setMobileOpen(false));
+
     return (
-        <div className="py-5 w-full sticky top-0 bg-primary-bg z-50 shadow-lg md:shadow">
+        <div className="py-5 w-full sticky top-0 bg-primary-bg z-50 shadow-lg md:shadow" ref={ref}>
             <div className="container flex justify-between items-center">
-                <Link to="/">
-                    <Logo className="h-12" />
-                </Link>
+                <div onClick={() => setMobileOpen(false)}>
+                    <Link to="/">
+                        <Logo className="h-12" />
+                    </Link>
+                </div>
                 <nav className="flex items-center md:space-x-4">
                     <DesktopLinks />
                     <ThemeToggler />
-                    <MobileLinks />
+                    <MobileLinks isMobileOpen={isMobileOpen} setMobileOpen={setMobileOpen} />
                 </nav>
             </div>
         </div>
