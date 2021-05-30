@@ -1,6 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import classnames from 'classnames';
 
 export const Bold = ({ children }) => <span className="font-bold">{children}</span>;
 export const Italic = ({ children }) => <span className="italic">{children}</span>;
@@ -43,6 +44,40 @@ export const Link = ({ children, url }) => (
         {children}
     </a>
 );
+
+export const Input = ({ label, type = 'text', name, id, className, required }) => {
+    return (
+        <div className={classnames(className, 'w-full text-left')}>
+            <label htmlFor={id} className="inline-block mb-1">
+                {label}
+            </label>
+            <input
+                name={name}
+                id={id}
+                type={type}
+                required={required}
+                className="w-full border rounded-sm text-black px-3 py-2"
+            />
+        </div>
+    );
+};
+
+export const Textarea = ({ label, name, id, className, required }) => {
+    return (
+        <div className={classnames(className, 'w-full text-left')}>
+            <label htmlFor={id} className="inline-block mb-1">
+                {label}
+            </label>
+            <textarea
+                name={name}
+                id={id}
+                required={required}
+                rows={8}
+                className="w-full border rounded-sm text-black px-3 py-2"
+            ></textarea>
+        </div>
+    );
+};
 
 export const markdownOptions = {
     renderMark: {
