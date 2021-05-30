@@ -116,6 +116,7 @@ module.exports = {
     variants: {
         extend: {
             brightness: ['hover'],
+            ringWidth: ['focus-visible'],
         },
     },
     plugins: [],

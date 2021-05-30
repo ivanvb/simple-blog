@@ -52,6 +52,14 @@ body {
     @apply font-serif text-primary-text bg-primary-bg;
 }
 
+body button {
+    @apply focus:outline-none focus-visible:ring ring-primary-text ring-opacity-60;
+}
+
+body a {
+    @apply inline-block focus:outline-none focus-visible:ring ring-primary-text ring-opacity-60;
+}
+
 .container {
     max-width: 1024px !important;
 }
