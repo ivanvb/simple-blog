@@ -64,4 +64,12 @@ body {
     @apply bg-primary-accent border-primary-accent !important;
 }
 
+.about-mobile-gatsby-image {
+    @apply block md:hidden !important;
+}
+
+.about-desktop-gatsby-image {
+    @apply hidden md:block !important;
+}
+
 @tailwind utilities;
