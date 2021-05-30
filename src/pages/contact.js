@@ -2,6 +2,18 @@ import React from 'react';
 import { H1, Input, Textarea } from '../components/base/index';
 
 const ContactPage = () => {
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        const elementsArray = [...e.target.elements];
+        const formData = elementsArray.reduce((acc, elem) => {
+            if (elem.name) {
+                acc[elem.name] = elem.value;
+            }
+
+            return acc;
+        }, {});
+    }
     return (
         <div className="container pt-4 md:pt-12 text-center">
             <H1>Contact Me</H1>
@@ -10,7 +22,7 @@ const ContactPage = () => {
                 <br className="hidden md:block" />{' '}
                 <span className="font-bold">Send me a message!</span>
             </p>
-            <form className="my-6 space-y-4 md:px-20">
+            <form className="my-6 space-y-4 md:px-20" onSubmit={handleSubmit}>
                 <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10">
                     <Input name="firstname" id="firstname" label="First name" required />
                     <Input name="lastname" id="lastname" label="Last name" required />
