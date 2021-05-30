@@ -17,7 +17,11 @@ const BlogPost = ({ data }) => {
 
             <div className="container">
                 <div className="blogpost-px">
+                    <span className="text-secondary-accent inline-block mb-1">
+                        {post.publicationDate}
+                    </span>
                     <H1>{post.title}</H1>
+
                     {renderRichText(post.content, markdownOptions)}
                 </div>
             </div>
@@ -29,7 +33,7 @@ export const query = graphql`
     query($title: String!) {
         contentfulBlogpost(title: { eq: $title }) {
             title
-            publicationDate
+            publicationDate(formatString: "ddd, MMM DD, YYYY")
             headlineImage {
                 gatsbyImageData(width: 1600, quality: 100)
                 description
