@@ -2,6 +2,7 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 import classnames from 'classnames';
+import { Link as GatsbyLink } from 'gatsby';
 
 export const Bold = ({ children }) => <span className="font-bold">{children}</span>;
 export const Italic = ({ children }) => <span className="italic">{children}</span>;
@@ -39,11 +40,22 @@ export const Separator = () => <hr />;
 
 export const ListItem = ({ children }) => <li className="-mb-6 pb-2">{children}</li>;
 
-export const Link = ({ children, url }) => (
-    <a href={url} className="underline">
-        {children}
-    </a>
-);
+export const Link = ({ children, url }) => {
+    const internal = /^\/(?!\/)/.test(url);
+    if (internal) {
+        return (
+            <GatsbyLink to={url} className="underline">
+                {children}
+            </GatsbyLink>
+        );
+    }
+
+    return (
+        <a href={url} className="underline">
+            {children}
+        </a>
+    );
+};
 
 export const Input = ({ label, type = 'text', name, id, className, required }) => {
     return (
