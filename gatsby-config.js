@@ -5,7 +5,10 @@ process.env.NODE_ENV !== 'production' &&
 
 module.exports = {
     siteMetadata: {
-        title: 'simple-blog',
+        title: 'Simple Blog',
+        description: `A very simple personal page that includes a blog, all developed using Gatsby.`,
+        author: `Simple Blog`,
+        keywords: ['gatsby', 'blog', 'react'],
     },
     plugins: [
         {
@@ -43,6 +46,12 @@ module.exports = {
                 path: './src/images/',
             },
             __key: 'images',
+        },
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                icon: 'src/images/icon.png',
+            },
         },
     ],
     flags: {
