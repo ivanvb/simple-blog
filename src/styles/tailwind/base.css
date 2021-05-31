@@ -7,16 +7,20 @@
     margin-right: 0;
 } */
 
+/* 
+ * Colors are defined this way to be able to use opacity utils with them
+ * https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo
+ */
 :root {
-    --light_background: white;
-    --light_text: black;
-    --light_accent: #e5e7eb;
-    --light_secondary_accent: #757575;
+    --light_background: 255, 255, 255;
+    --light_text: 0, 0, 0;
+    --light_accent: 229, 231, 235;
+    --light_secondary_accent: 117, 117, 117;
 
-    --dark_background: #232931;
-    --dark_text: #eeeeee;
-    --dark_accent: #50cca2;
-    --dark_secondary_accent: #a0a0a0;
+    --dark_background: 35, 41, 49;
+    --dark_text: 238, 238, 238;
+    --dark_accent: 80, 204, 162;
+    --dark_secondary_accent: 160, 160, 160;
 
     --primary_background: var(--light_background);
     --primary_text: var(--light_text);

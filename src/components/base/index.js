@@ -68,7 +68,7 @@ export const Input = ({ label, type = 'text', name, id, className, required }) =
                 id={id}
                 type={type}
                 required={required}
-                className="w-full border rounded-sm text-black px-3 py-2"
+                className="w-full border border-primary-text rounded-sm text-black px-3 py-2 focus:outline-none focus-visible:ring ring-primary-text ring-opacity-25"
             />
         </div>
     );
@@ -85,7 +85,7 @@ export const Textarea = ({ label, name, id, className, required }) => {
                 id={id}
                 required={required}
                 rows={8}
-                className="w-full border rounded-sm text-black px-3 py-2"
+                className="w-full border border-primary-text border-opacity-50 rounded-sm text-black px-3 py-2 focus:outline-none focus-visible:ring ring-primary-text ring-opacity-25"
             ></textarea>
         </div>
     );

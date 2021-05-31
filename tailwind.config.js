@@ -1,3 +1,15 @@
+function cssVarRgbHelper(cssVariable) {
+    return ({ opacityVariable, opacityValue }) => {
+        if (opacityValue !== undefined) {
+            return `rgba(var(--${cssVariable}), ${opacityValue})`;
+        }
+        if (opacityVariable !== undefined) {
+            return `rgba(var(--${cssVariable}), var(${opacityVariable}, 1))`;
+        }
+        return `rgb(var(--${cssVariable}))`;
+    };
+}
+
 module.exports = {
     purge: {
         enabled: process.env.NODE_ENV === 'production',
@@ -7,10 +19,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'primary-bg': 'var(--primary_background)',
-                'primary-text': 'var(--primary_text)',
-                'primary-accent': 'var(--primary_accent)',
-                'secondary-accent': 'var(--primary_secondary_accent)',
+                'primary-bg': cssVarRgbHelper('primary_background'),
+                'primary-text': cssVarRgbHelper('primary_text'),
+                'primary-accent': cssVarRgbHelper('primary_accent'),
+                'secondary-accent': cssVarRgbHelper('primary_secondary_accent'),
             },
             borderWidth: {
                 '1/2': '0.5px',
