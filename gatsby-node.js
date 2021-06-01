@@ -70,7 +70,7 @@ async function createPostPages(graphql, actions) {
             pathPrefix: `/${POST_PAGE_PREFIX}/${tag.toLowerCase()}`,
             component: template,
             context: {
-                title: `${tag.charAt(0).toUpperCase() + string.slice(1)}`,
+                title: `${tag.charAt(0).toUpperCase() + tag.slice(1)}`,
                 regex: `/${tag}/`,
                 tags: tagsContextData,
             },
