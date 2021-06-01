@@ -7,13 +7,21 @@ import Seo from '../components/Seo';
 
 const BlogPost = ({ data }) => {
     const post = data.contentfulBlogpost;
+    console.log(
+        post?.headlineImage?.gatsbyImageData?.images?.fallback?.src.replace('//', 'https://')
+    );
 
     return (
         <>
             <Seo
                 title={post.title}
                 description={post.brief.brief}
-                image={post?.headlineImage?.gatsbyImageData?.images?.fallback}
+                image={{
+                    src: post?.headlineImage?.gatsbyImageData?.images?.fallback?.src?.replace(
+                        '//',
+                        'https://'
+                    ),
+                }}
             />
             <article className="flex flex-col items-center">
                 <GatsbyImage
