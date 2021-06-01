@@ -2,13 +2,18 @@ process.env.NODE_ENV !== 'production' &&
     require('dotenv').config({
         path: `.env.development`,
     });
+require('dotenv').config({
+    path: `.env.development`,
+});
 
+const siteUrl = process.env.GATSBY_URL;
 module.exports = {
     siteMetadata: {
         title: 'Simple Blog',
         description: `A very simple personal page that includes a blog, all developed using Gatsby.`,
         author: `Simple Blog`,
         keywords: ['gatsby', 'blog', 'react'],
+        siteUrl: siteUrl,
     },
     plugins: [
         {
@@ -20,7 +25,38 @@ module.exports = {
         },
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
-        // 'gatsby-plugin-sitemap',
+        {
+            resolve: 'gatsby-plugin-sitemap',
+            options: {
+                query: `
+                    {
+                        allSitePage{
+                            nodes{
+                                path
+                            }
+                        }
+                    }
+                    
+                `,
+                resolveSiteUrl: () => siteUrl,
+                resolvePages: ({
+                    allSitePage: { nodes: allPages },
+                    // allContentfulBlogpost: { edges: blogPosts },
+                }) => {
+                    // const contentfulMap = blogPosts.reduce(({}))
+
+                    return allPages.map((page) => {
+                        return { ...page };
+                    });
+                },
+                serialize: ({ path, modifiedGmt }) => {
+                    return {
+                        url: path,
+                        lastmod: modifiedGmt,
+                    };
+                },
+            },
+        },
         {
             resolve: `gatsby-plugin-sharp`,
             options: {

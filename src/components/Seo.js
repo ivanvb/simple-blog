@@ -25,7 +25,7 @@ const Seo = ({ description, meta, title, image, socialTitle }) => {
     );
 
     const metaDescription = description || site.siteMetadata.description;
-    const img_url = image ? image.src : `${process.env.GATSBY_URL}${file.publicURL}`;
+    const img_url = image ? image.src : `${process.env.GATSBY_URL}/${file.publicURL}`;
 
     const imageTags = [
         {

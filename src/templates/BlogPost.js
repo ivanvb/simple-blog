@@ -7,9 +7,6 @@ import Seo from '../components/Seo';
 
 const BlogPost = ({ data }) => {
     const post = data.contentfulBlogpost;
-    console.log(
-        post?.headlineImage?.gatsbyImageData?.images?.fallback?.src.replace('//', 'https://')
-    );
 
     return (
         <>
