@@ -13,7 +13,7 @@ const BlogPost = ({ data }) => {
             <Seo
                 title={post.title}
                 description={post.brief.brief}
-                image={post?.headlineImage?.gatsbyImageData?.images?.fallback?.src}
+                image={post?.headlineImage?.gatsbyImageData?.images?.fallback}
             />
             <article className="flex flex-col items-center">
                 <GatsbyImage
