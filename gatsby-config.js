@@ -39,12 +39,12 @@ module.exports = {
                     
                 `,
                 resolveSiteUrl: () => siteUrl,
-                resolvePages: ({
-                    allSitePage: { nodes: allPages },
-                    // allContentfulBlogpost: { edges: blogPosts },
-                }) => {
-                    // const contentfulMap = blogPosts.reduce(({}))
-
+                resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+                    console.log(
+                        allPages.map((page) => {
+                            return { ...page };
+                        })
+                    );
                     return allPages.map((page) => {
                         return { ...page };
                     });
