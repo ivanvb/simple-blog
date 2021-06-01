@@ -50,6 +50,7 @@ async function createPostPages(graphql, actions) {
         pathPrefix: `/${POST_PAGE_PREFIX}/all`,
         component: template,
         context: {
+            title: 'All posts',
             regex: '/.*/',
             tags: tagsContextData,
         },
@@ -69,6 +70,7 @@ async function createPostPages(graphql, actions) {
             pathPrefix: `/${POST_PAGE_PREFIX}/${tag.toLowerCase()}`,
             component: template,
             context: {
+                title: `${tag.charAt(0).toUpperCase() + string.slice(1)}`,
                 regex: `/${tag}/`,
                 tags: tagsContextData,
             },
