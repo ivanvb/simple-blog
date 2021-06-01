@@ -3,6 +3,7 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { markdownOptions, H1 } from '../components/base/index';
+import Seo from '../components/Seo';
 
 const AboutPage = ({ data }) => {
     const {
@@ -10,6 +11,7 @@ const AboutPage = ({ data }) => {
     } = data;
     return (
         <>
+            <Seo title="About" />
             <GatsbyImage
                 image={photo.gatsbyImageData}
                 alt={photo.description}

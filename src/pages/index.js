@@ -2,18 +2,22 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Quote from '../components/Quote';
 import RecentPosts from '../components/RecentPosts';
+import Seo from '../components/Seo';
 
 const IndexPage = ({ data }) => {
     const { contentfulHeroQuote: quoteData } = data;
     return (
-        <div>
-            <Quote
-                text={quoteData.text.text}
-                author={quoteData.author}
-                backgroundImage={quoteData.backgroundImage.gatsbyImageData}
-            />
-            <RecentPosts />
-        </div>
+        <>
+            <Seo title="Home" socialTitle="Simple Blog: Just a Template" />
+            <div>
+                <Quote
+                    text={quoteData.text.text}
+                    author={quoteData.author}
+                    backgroundImage={quoteData.backgroundImage.gatsbyImageData}
+                />
+                <RecentPosts />
+            </div>
+        </>
     );
 };
 
