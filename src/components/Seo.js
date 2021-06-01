@@ -17,21 +17,15 @@ const Seo = ({ description, meta, title, image, socialTitle }) => {
                         keywords
                     }
                 }
-                file(relativePath: { eq: "icon.png" }) {
-                    childImageSharp {
-                        fixed(width: 512, height: 512) {
-                            src
-                        }
-                    }
+                file(relativePath: { regex: "/icon.png/" }) {
+                    publicURL
                 }
             }
         `
     );
 
     const metaDescription = description || site.siteMetadata.description;
-    const img_url = image
-        ? image.src
-        : `${process.env.GATSBY_URL}${file.childImageSharp.fixed.src}`;
+    const img_url = image ? image.src : `${process.env.GATSBY_URL}${file.publicURL}`;
 
     const imageTags = [
         {
