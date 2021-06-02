@@ -67,7 +67,6 @@ module.exports = {
                     });
                 },
                 serialize: ({ path, updatedAt }) => {
-                    console.log(`Building ${path}, updated at: ${updatedAt}`);
                     return {
                         url: path,
                         lastmod: updatedAt,
@@ -92,6 +91,7 @@ module.exports = {
                     avifOptions: {},
                 },
             },
+            icon: './src/images/favicon.svg',
         },
         {
             resolve: 'gatsby-source-filesystem',
@@ -101,12 +101,12 @@ module.exports = {
             },
             __key: 'images',
         },
-        // {
-        //     resolve: 'gatsby-plugin-manifest',
-        //     options: {
-        //         icon: 'src/images/icon.png',
-        //     },
-        // },
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                icon: './src/images/icon.png',
+            },
+        },
     ],
     flags: {
         // FAST_DEV: true,
