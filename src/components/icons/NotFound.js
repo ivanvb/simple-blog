@@ -21,7 +21,6 @@ const NotFound = ({ className }) => {
                 fill="rgb(var(--primary_background))"
                 className="border"
             />
-            !!!
         </svg>
     );
 };
