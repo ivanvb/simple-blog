@@ -2,9 +2,6 @@ process.env.NODE_ENV !== 'production' &&
     require('dotenv').config({
         path: `.env.development`,
     });
-require('dotenv').config({
-    path: `.env.development`,
-});
 
 const { titleToSlug } = require('./src/util/index');
 
@@ -104,12 +101,12 @@ module.exports = {
             },
             __key: 'images',
         },
-        {
-            resolve: 'gatsby-plugin-manifest',
-            options: {
-                icon: 'src/images/icon.png',
-            },
-        },
+        // {
+        //     resolve: 'gatsby-plugin-manifest',
+        //     options: {
+        //         icon: 'src/images/icon.png',
+        //     },
+        // },
     ],
     flags: {
         // FAST_DEV: true,
