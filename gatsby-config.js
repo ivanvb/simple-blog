@@ -6,6 +6,8 @@ require('dotenv').config({
     path: `.env.development`,
 });
 
+const { titleToSlug } = require('./src/util/index');
+
 const siteUrl = process.env.GATSBY_URL;
 module.exports = {
     siteMetadata: {
@@ -35,24 +37,43 @@ module.exports = {
                                 path
                             }
                         }
+                        allContentfulBlogpost{
+                            edges{
+                                node{
+                                    title
+                                    updatedAt
+                                }
+                            }
+                        }
                     }
                     
                 `,
                 resolveSiteUrl: () => siteUrl,
-                resolvePages: ({ allSitePage: { nodes: allPages } }) => {
-                    console.log(
-                        allPages.map((page) => {
-                            return { ...page };
-                        })
-                    );
+                resolvePages: ({
+                    allSitePage: { nodes: allPages },
+                    allContentfulBlogpost: { edges: allPosts },
+                }) => {
+                    allPosts.forEach(({ node }) => {
+                        const found = allPages.find(({ path }) => {
+                            if (path.includes(titleToSlug(node.title))) {
+                                return true;
+                            }
+                        });
+
+                        if (!!found) {
+                            found.updatedAt = node.updatedAt;
+                        }
+                    });
+
                     return allPages.map((page) => {
                         return { ...page };
                     });
                 },
-                serialize: ({ path, modifiedGmt }) => {
+                serialize: ({ path, updatedAt }) => {
+                    console.log(`Building ${path}, updated at: ${updatedAt}`);
                     return {
                         url: path,
-                        lastmod: modifiedGmt,
+                        lastmod: updatedAt,
                     };
                 },
             },
