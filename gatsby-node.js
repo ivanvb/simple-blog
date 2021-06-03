@@ -3,7 +3,7 @@ const { paginate } = require('gatsby-awesome-pagination');
 const { titleToSlug } = require('./src/util/index');
 
 async function createPostPages(graphql, actions) {
-    const ITEMS_PER_PAGE = 2;
+    const ITEMS_PER_PAGE = 5;
     const POST_PAGE_PREFIX = 'blog';
 
     const template = path.resolve('./src/templates/ArticleList.js');
