@@ -12,7 +12,7 @@ The main feature of this project is its blog, it is divided in categories, which
 
 Aside from the blog the page also contains:
 
-- A home page where a quote defined by the blog's owner is displayed as well as the four most recent blogposts.
+- A home page where a quote defined by the blog's owner is displayed as well as the four most recent blog posts.
 - An about page with the author's photo and biography.
 - A contact page where people can send the author emails. It can be extended to include captcha verification to avoid spam.
 - Dark and light mode, which defaults to the preferred color scheme of your system, but can be set to whichever one you feel more comfortable with. After setting up the color scheme of your preference it will stay the same even if you refresh the page, until you manually change it.
