@@ -107,6 +107,14 @@ module.exports = {
                 icon: './src/images/icon.png',
             },
         },
+        `gatsby-plugin-remove-trailing-slashes`,
+        {
+            resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+            options: {
+                siteUrl: siteUrl,
+                noTrailingSlash: true,
+            },
+        },
     ],
     flags: {
         // FAST_DEV: true,
