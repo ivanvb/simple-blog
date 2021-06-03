@@ -15,8 +15,8 @@ const PostPreviewList = ({ posts, grid }) => {
                     <li
                         key={i}
                         className={classnames({
-                            'pt-12': i !== 0 && !grid,
-                            'pb-12': i !== posts.length - 1 && !grid,
+                            'pt-8': i !== 0 && !grid,
+                            'pb-8': i !== posts.length - 1 && !grid,
                             'border-b pb-10': grid,
                         })}
                     >
