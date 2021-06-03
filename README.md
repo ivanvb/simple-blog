@@ -1,54 +1,52 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Simple Blog
 
-## 🚀 Quick start
+This a blog created with [Gatsby](https://www.gatsbyjs.com/) (a React framework), and [Tailwind](https://tailwindcss.com/). It sources its data from Contentful, a Content Management System (CMS).
 
-1.  **Create a Gatsby site.**
+The project itself servers as a basic site for a non technical professional who desires to have a public online blog that is also heavily customizable and free to host due to the fact that it is statically generated and does not require any sort of API or database to be fully functional.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+**You can see the final result hosted [here](https://str-blog.netlify.app/)**
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Features
 
-2.  **Start developing.**
+The main feature of this project is its blog, it is divided in categories, which are created from the CMS. At the same time each category is paginated by a customizable amount, which is 5 by default.
 
-    Navigate into your new site’s directory and start it up.
+Aside from the blog the page also contains:
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+- A home page where a quote defined by the blog's owner is displayed as well as the four most recent blogposts.
+- An about page with the author's photo and biography.
+- A contact page where people can send the author emails. It can be extended to include captcha verification to avoid spam.
+- Dark and light mode, which defaults to the preferred color scheme of your system, but can be set to whichever one you feel more comfortable with. After setting up the color scheme of your preference it will stay the same even if you refresh the page, until you manually change it.
 
-3.  **Open the code and start customizing!**
+## Setup
 
-    Your site is now running at http://localhost:8000!
+To run this project locally you will need to have `Node` installed. The project was developed using `Node v14` however it may work in other versions as well.
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+Once you have node installed you can run
 
-4.  **Learn more**
+```
+npm install
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+or 
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+yarn install
+```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Then proceed to create two `.env` files, `.env.development` and `.env.production`. Each one should have the following information:
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+ACCESS_TOKEN="Your Contentful access token"
+SPACE_ID="Your Contentful space id"
+```
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+This information is required for the Contentful integration to work properly.
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### Create Contentful model and upload test data
 
-## 🚀 Quick start (Gatsby Cloud)
+The project comes with the models that should be in your Contentful instance in order to source the data properly. To upload said data to your instance run:
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+```bash
+cd ./contentful
+bash ./import.sh your_space_id
+```
