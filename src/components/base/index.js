@@ -36,7 +36,7 @@ export const H6 = ({ children }) => (
 
 export const Image = ({ image, alt }) => <GatsbyImage image={image} alt={alt} className="w-full" />;
 
-export const Separator = () => <hr />;
+export const Separator = () => <hr className="py-3" />;
 
 export const ListItem = ({ children }) => <li className="-mb-6 pb-2">{children}</li>;
 

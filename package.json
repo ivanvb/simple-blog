@@ -14,7 +14,8 @@
         "clean": "gatsby clean",
         "build:css": "postcss ./src/styles/tailwind/base.css -o ./src/styles/tailwind/build.css",
         "watch:css": "postcss ./src/styles/tailwind/base.css -o ./src/styles/tailwind/build.css -w",
-        "dev": "yarn build:css && concurrently \"yarn dev:gatsby\" \"yarn watch:css\""
+        "dev": "yarn build:css && concurrently \"yarn dev:gatsby\" \"yarn watch:css\"",
+        "contentful:clean": "rm -rf ./contentful/data"
     },
     "dependencies": {
         "@contentful/rich-text-types": "^14.1.2",
