@@ -4,6 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { markdownOptions, H1 } from '../components/base/index';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import Seo from '../components/Seo';
+import InlineTags from '../components/InlineTags';
 
 const BlogPost = ({ data }) => {
     const post = data.contentfulBlogpost;
@@ -33,6 +34,9 @@ const BlogPost = ({ data }) => {
                             {post.publicationDate}
                         </span>
                         <H1>{post.title}</H1>
+                        <div className="-mt-2 mb-4">
+                            <InlineTags tags={post.tags.map((tag) => tag.title)} variant="md" />
+                        </div>
 
                         {renderRichText(post.content, markdownOptions)}
                     </div>
