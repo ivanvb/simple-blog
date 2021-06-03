@@ -15,8 +15,9 @@ const AboutPage = ({ data }) => {
             <GatsbyImage
                 image={photo.gatsbyImageData}
                 alt={photo.description}
-                className="h-64 w-full mb-4 about-mobile-gatsby-image"
+                className="h-80 w-full mb-4 about-mobile-gatsby-image"
                 objectFit="cover"
+                imgClassName="filter grayscale"
             />
             <div className="container md:pt-12">
                 <GatsbyImage
@@ -24,6 +25,7 @@ const AboutPage = ({ data }) => {
                     alt={photo.description}
                     className="h-96 w-96 float-right ml-10 hidden about-desktop-gatsby-image"
                     objectFit="cover"
+                    imgClassName="filter grayscale"
                 />
                 <div>
                     <H1>About the Author</H1>
