@@ -4,7 +4,7 @@ const DARK = 'dark';
 const LIGHT = 'light';
 
 function getInitialColorMode() {
-    const persistedColorPreference = window.localStorage.getItem('color-mode');
+    const persistedColorPreference = window?.localStorage?.getItem('color-mode');
     const hasPersistedPreference = typeof persistedColorPreference === 'string';
 
     if (hasPersistedPreference) {
@@ -58,7 +58,7 @@ function toggleMode(mode) {
         cssVariables[mode].forEach(({ key, value }) => {
             document.documentElement.style.setProperty(key.replace(mode, 'primary'), value);
         });
-        window.localStorage.setItem('color-mode', mode);
+        window?.localStorage?.setItem('color-mode', mode);
     }
 }
 
