@@ -25,6 +25,9 @@ function toggleMode(mode) {
     // Obtained from https://stackoverflow.com/a/56250392
     const cssVariables = [].slice
         .call(document.styleSheets)
+        .filter(
+            (styleSheet) => !styleSheet.href || styleSheet.href.startsWith(window.location.origin)
+        )
         .map((styleSheet) => [].slice.call(styleSheet.cssRules))
         .flat()
         .filter((cssRule) => cssRule.selectorText === ':root')
